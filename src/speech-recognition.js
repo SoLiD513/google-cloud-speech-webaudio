@@ -1,4 +1,4 @@
-const { speechToText } = require('./rest-api');
+const { speechToText } = require("./rest-api");
 
 const BUFFER_SIZE = 4096;
 
@@ -8,7 +8,7 @@ const BUFFER_SIZE = 4096;
 // the size could be further reduced through client-size gzip, TBD if it's worth it.
 const SAMPLE_RATE = 16000;
 
-const float32ToInt16 = f => {
+const float32ToInt16 = (f) => {
   const multiplier = f < 0 ? 0x8000 : 0x7fff; // 16-bit signed range is -32768 to 32767
   return f * multiplier;
 };
@@ -64,7 +64,7 @@ class GoogleSpeechRecognition {
         1,
         1
       );
-      this.processor.onaudioprocess = e => {
+      this.processor.onaudioprocess = (e) => {
         const input = e.inputBuffer.getChannelData(0);
         for (let i = 0; i < input.length; i++) {
           this.tempBufferView[i] = float32ToInt16(input[i]);
@@ -81,7 +81,7 @@ class GoogleSpeechRecognition {
   disconnectMicrophoneAndProcessor() {
     if (this.microphone) {
       this.microphone.disconnect();
-      this.microphone.mediaStream.getTracks().forEach(track => track.stop());
+      this.microphone.mediaStream.getTracks().forEach((track) => track.stop());
       this.microphone = null;
     }
 
@@ -109,7 +109,7 @@ class GoogleSpeechRecognition {
     this.starting = false;
   }
 
-  async stopListening(languageCode = 'en-US') {
+  async stopListening(languageCode = "en-US") {
     if (this.starting) {
       // use "cancelStart" flag to resolve race condition between start and stop
       this.cancelStart = true;

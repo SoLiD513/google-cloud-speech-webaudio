@@ -5,7 +5,7 @@ Speech recognition and synthesis using the Google Cloud Speech APIs integrated w
 For now authorization only works with an API Key, you can create one at https://console.cloud.google.com/apis/credentials. 
 **Make sure you restrict it to only Cloud Speech-to-Text and Cloud Text-to-Speech APIs.**
 
-[Here's a demo page.](https://andrei.codes/cloud-speech/)
+[Demo](https://andrei.codes/cloud-speech/)
 
 ## Usage
 
@@ -42,11 +42,3 @@ const speechSynthesis = new GoogleSpeechSynthesis(GOOGLE_API_KEY);
 // make the API call and play the produced speech audio buffer
 await speechSynthesis.speak('hello world');
 ```
-
-## Author
-
-**Andrei Gheorghe**
-
-- [About me](https://andrei.codes)
-- LinkedIn: [linkedin.com/in/idevelop](http://www.linkedin.com/in/idevelop)
-- Twitter: [@idevelop](http://twitter.com/idevelop)

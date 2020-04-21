@@ -1,8 +1,8 @@
 {
   "name": "google-cloud-speech-webaudio",
   "version": "0.1.3",
-  "description": "Google Cloud speech recognition and synthesis integrated with WebAudio, fully functional in the browser.",
-  "author": "Andrei Gheorghe <andreig@gmail.com>",
+  "description": "",
+  "author": "",
   "main": "src/index",
   "dependencies": {
     "base64-js": "^1.3.1"
